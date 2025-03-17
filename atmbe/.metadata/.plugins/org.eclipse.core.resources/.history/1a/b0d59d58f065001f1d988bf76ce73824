@@ -1,0 +1,27 @@
+package com.project.atm.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import com.project.atm.enums.UserType;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@Entity(name = "user_details")
+public class User {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private Integer userId;
+
+	private String username;
+	private String password;
+	private Double balance;
+
+	private UserType userType;
+}

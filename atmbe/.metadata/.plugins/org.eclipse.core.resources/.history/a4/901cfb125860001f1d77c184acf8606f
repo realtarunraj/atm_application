@@ -1,0 +1,5 @@
+package com.project.atm.entity;
+
+public enum TransactionType {
+	Withdrawl, Deposit, Transfer
+}

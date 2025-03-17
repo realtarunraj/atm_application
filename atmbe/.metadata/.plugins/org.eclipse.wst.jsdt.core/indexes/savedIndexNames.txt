@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\TAKUMARR\Downloads\ShadowTraining\AtmProject\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2447011590.index
+3610549432.index
+1296499793.index
+1357167502.index
+202634652.index
+2227692535.index

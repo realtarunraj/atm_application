@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [14/Sep/2024:10:00:05 +0530] "GET /atm/transaction/user/0 HTTP/1.1" 200 12
+0:0:0:0:0:0:0:1 - - [14/Sep/2024:10:00:14 +0530] "GET /atm/transaction/btwdates?from=2024-09-11&to=2024-09-13 HTTP/1.1" 200 1768
+0:0:0:0:0:0:0:1 - - [14/Sep/2024:12:03:10 +0530] "GET /atm/transaction/user/0 HTTP/1.1" 200 12
+0:0:0:0:0:0:0:1 - - [14/Sep/2024:12:03:55 +0530] "GET /atm/transaction/user/0 HTTP/1.1" 200 12

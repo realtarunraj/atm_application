@@ -1,0 +1,89 @@
+package com.project.atm.controller;
+
+import java.util.List;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.project.atm.dto.LoginDTO;
+import com.project.atm.dto.PaymentDTO;
+import com.project.atm.dto.TransferDTO;
+import com.project.atm.dto.UserDTO;
+import com.project.atm.entity.User;
+import com.project.atm.service.UserService;
+
+@CrossOrigin("*")
+@RestController
+@RequestMapping("/user")
+public class UserController {
+
+	@Autowired
+	private UserService userService;
+
+	// Creating the User ...
+	@PostMapping()
+	public User createUser(@RequestBody User user) {
+		return userService.addUser(user);
+	}
+
+	// Get all Users ...
+	@GetMapping()
+	public List<User> getUsers() {
+		return userService.getUsers();
+	}
+
+	// Getting User by Id ...
+	@GetMapping("/{id}")
+	public UserDTO getUser(@PathVariable Integer id) {
+		return userService.getUser(id);
+	}
+
+	// Updating the User
+	@PutMapping()
+	public User updateUser(@Valid @RequestBody UserDTO user) {
+		return userService.updateUser(user);
+	}
+
+	// Delete the User
+	@DeleteMapping("/{id}")
+	public String deleteUser(@PathVariable Integer id) {
+		return userService.deleteUser(id);
+	}
+
+	// UserName and Password authenticator ...
+	@RequestMapping("/login")
+	public String userLogin(@Valid @RequestBody LoginDTO logindto) {
+		return userService.userLogin(logindto);
+	}
+
+	// Getting the Remaining Balance of User ...
+	@GetMapping("/getBalance/{id}")
+	public String getBalance(@PathVariable Integer id) {
+		return userService.getBalance(id);
+	}
+
+	@PutMapping("/withdrawl")
+	public String withdrawl(@Valid @RequestBody PaymentDTO paymentdto) {
+		return userService.withdrawl(paymentdto);
+	}
+
+	@PutMapping("/deposit")
+	public String deposit(@Valid @RequestBody PaymentDTO paymentdto) {
+		return userService.deposit(paymentdto);
+	}
+
+	@PutMapping("/transfer")
+	public String transfer(@Valid @RequestBody TransferDTO transferdto) {
+		return userService.transfer(transferdto);
+	}
+}

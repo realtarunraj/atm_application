@@ -1,0 +1,10 @@
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:21:36:27 +0530] "OPTIONS /atm/user HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:21:36:28 +0530] "POST /atm/user HTTP/1.1" 200 163
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:21:36:59 +0530] "OPTIONS /atm/user/login HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:21:36:59 +0530] "POST /atm/user/login HTTP/1.1" 200 89
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:21:37:10 +0530] "OPTIONS /atm/user/withdrawl HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:21:37:10 +0530] "PUT /atm/user/withdrawl HTTP/1.1" 200 75
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:21:37:17 +0530] "GET /atm/user/getBalance/62 HTTP/1.1" 200 19
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:21:37:41 +0530] "POST /atm/user/login HTTP/1.1" 200 80
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:21:38:35 +0530] "OPTIONS /atm/user/transfer HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:21:38:36 +0530] "PUT /atm/user/transfer HTTP/1.1" 200 61

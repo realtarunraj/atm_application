@@ -1,0 +1,20 @@
+package com.project.atm.entity;
+
+public enum TransactionType {
+	WITHDRAWAL(0), DEPOSIT(1), TRANSFER(2);
+
+	private final int code;
+
+	TransactionType(int code) {
+		this.code = code;
+	}
+
+	public static TransactionType fromCode(int code) {
+		for (TransactionType type : TransactionType.values()) {
+			if (type.code == code) {
+				return type;
+			}
+		}
+		throw new IllegalArgumentException("Invalid code: " + code);
+	}
+}

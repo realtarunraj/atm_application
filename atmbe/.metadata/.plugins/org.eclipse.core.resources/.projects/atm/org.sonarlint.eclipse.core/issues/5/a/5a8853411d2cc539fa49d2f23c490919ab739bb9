@@ -1,0 +1,46 @@
+
+v	java:S112K"FDefine and throw a dedicated exception instead of using a generic one.(—ÖÏéøÿÿÿÿH FRMAJORZ
+CODE_SMELL
+w	java:S112‚"FDefine and throw a dedicated exception instead of using a generic one.(³ÁôıüÿÿÿÿH¡FRMAJORZ
+CODE_SMELL
+…	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ç¯îìH¢FRMINORZ
+CODE_SMELL
+”
+java:S14881"cImmediately return this expression instead of assigning it to the temporary variable "userCreated".(å˜¥üÿÿÿÿH£FRMINORZ
+CODE_SMELL
+p	java:S112;"FDefine and throw a dedicated exception instead of using a generic one.(ÅšÊ
+H¦FRMAJORZ
+CODE_SMELL
+ƒ
+java:S1192U"ODefine a constant instead of duplicating this literal "Invalid UserId" 3 times.(³ÁôıüÿÿÿÿH§FRCRITICALZ
+CODE_SMELL
+}	java:S112U"FDefine and throw a dedicated exception instead of using a generic one.(³Áôıüÿÿÿÿ8şÜíæ™2H«FRMAJORZ
+CODE_SMELL
+w	java:S112—"FDefine and throw a dedicated exception instead of using a generic one.(³ÁôıüÿÿÿÿH¬FRMAJORZ
+CODE_SMELL
+q	java:S1127"FDefine and throw a dedicated exception instead of using a generic one.(ÛÇÃ˜H­FRMAJORZ
+CODE_SMELL
+w	java:S112·"FDefine and throw a dedicated exception instead of using a generic one.(ïé­õùÿÿÿÿH®FRMAJORZ
+CODE_SMELL
+‚
+java:S1192"KDefine a constant instead of duplicating this literal "Amount of " 3 times.(•¢—8ìÚİŠ¶2H¯FRCRITICALZ
+CODE_SMELL
+‘
+java:S1488x"_Immediately return this expression instead of assigning it to the temporary variable "balance".(¹ƒˆh8ìÚİŠ¶2H³FRMINORZ
+CODE_SMELL
+i
+java:S4973¦"<Strings and Boxed types should be compared using "equals()".(ÎàË8ìÚİŠ¶2H¶FRMAJORZBUG
+}
+java:S3655´"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(–ÎÙõ8ìÚİŠ¶2H»FRMAJORZBUG
+‚
+java:S3655µ"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(¥ì”óûÿÿÿÿ8ìÚİŠ¶2H¼FRMAJORZBUG
+‚
+java:S3655±"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(‘š¬ıÿÿÿÿ8ìÚİŠ¶2H½FRMAJORZBUG
+u
+java:S25836"DChange this condition so that it does not always evaluate to "false"(ËŠÛÿÿÿÿÿ8ìÚİŠ¶2H¾FRMAJORZBUG
+^
+java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8ìÚİŠ¶2HÁFRMINORZ
+CODE_SMELL
+
+java:S1128"[Remove this unused import 'org.hibernate.type.descriptor.java.LocalDateTimeJavaDescriptor'.(ñÈ´ÿ8ìÚİŠ¶2HÃFRMINORZ
+CODE_SMELL

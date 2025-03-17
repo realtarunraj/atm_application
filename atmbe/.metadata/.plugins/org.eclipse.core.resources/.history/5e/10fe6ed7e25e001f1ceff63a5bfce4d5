@@ -1,0 +1,89 @@
+package com.project.atm.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.project.atm.entity.User;
+import com.project.atm.repository.UserRepository;
+
+@Service
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	private UserRepository userRepo;
+
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+
+	public User addUser(User user) {
+		// Encode the Password ...
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
+		User userCreated = userRepo.save(user);
+		return userCreated;
+	}
+
+	public String updateUser(User user) {
+		if (user.getUserId() == null)
+			throw new RuntimeException("User Id is invalid");
+		User existingUser = userRepo.findById(user.getUserId()).get();
+		if (user.getBalance() != null)
+			existingUser.setBalance(user.getBalance());
+		if (user.getPassword() != null) {
+			existingUser.setPassword(passwordEncoder.encode(user.getPassword()));
+		}
+		if (user.getUsername() != null)
+			existingUser.setUsername(user.getUsername());
+		return "success";
+	}
+
+	public User getUser(Integer userId) {
+		Optional<User> user = userRepo.findById(userId);
+		if (user.isEmpty())
+			throw new RuntimeException("User Does not exists");
+		return user.get();
+	}
+
+	public List<User> getUsers() {
+		return userRepo.findAll();
+	}
+
+	public String deleteUser(Integer userId) {
+		if (userId == null)
+			throw new RuntimeException("Invalid UserId");
+		userRepo.deleteById(userId);
+		return "Success";
+	}
+
+	public String withdrawl(Integer userId, Double amount) {
+		Optional<User> user = userRepo.findById(userId);
+		if (user.isEmpty())
+			throw new RuntimeException("Invalid UserId");
+		if (user.get().getBalance() < amount)
+			throw new RuntimeException("Insufficient Balance");
+		user.get().setBalance(user.get().getBalance() - amount);
+		userRepo.save(user.get());
+		return "Amount " + amount + " has been debited from user " + user.get().getUserId() + " current balance is "
+				+ user.get().getBalance();
+	}
+
+	public String deposit(Integer userId, Double amount) {
+		Optional<User> user = userRepo.findById(userId);
+		if (user.isEmpty())
+			throw new RuntimeException("Invalid UserId");
+		user.get().setBalance(user.get().getBalance() + amount);
+		userRepo.save(user.get());
+		return "Amount " + amount + " has been credited to user " + user.get().getUserId() + " current balance is "
+				+ user.get().getBalance();
+	}
+
+	public String transfer(Integer senderId, Integer recipientId, Double amount) {
+		withdrawl(senderId, amount);
+		deposit(recipientId, amount);
+		return "Amount " + amount + " has been Transfered from userId " + senderId + " to UserId " + recipientId;
+	}
+
+}
